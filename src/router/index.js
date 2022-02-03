@@ -6,17 +6,44 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/membre/:idMembre',
+    name: 'Membre',
+    component: () => import('../views/Membre.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/membres',
+    name: 'Membres',
+    component: () => import('../views/Membres.vue')
+  },
+  {
+    path: '/poster-message/:idConversation',
+    name: 'PosterMessage',
+    component: () => import('../views/PosterMessage.vue')
+  },
+  {
+    path: '/conversation/:idConversation',
+    name: 'Conversation',
+    component: () => import('../views/Conversation.vue')
+  },
+  {
+    path: '/creer-conversation',
+    name: 'CreerConversation',
+    component: () => import('../views/CreerConversation.vue')
+  },
+  {
+    path: '/',
+    name: 'Conversations',
+    component: () => import('../views/Conversations.vue')
+  },
+  {
+    path: '/creation-compte',
+    name: 'CreationCompte',
+    component: () => import('../views/CreationCompte.vue')
+  },
+  {
+    path: '/connexion',
+    name: 'Connexion',
+    component: () => import('../views/Connexion.vue')
   }
 ]
 
